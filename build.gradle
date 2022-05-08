@@ -29,18 +29,15 @@ repositories{
 }
 
 dependencies {
-    compileOnly('org.projectlombok:lombok')
+    testCompileOnly("junit:junit")
+    compileOnly('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
     compileOnly('org.springframework.boot:spring-boot-starter-web')
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.2.0.RELEASE'
     testCompileOnly('org.springframework.boot:spring-boot-starter-test')
+    testImplementation group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
+    compileOnly('org.springframework.boot:spring-boot-starter-data-jpa')
+    compileOnly('com.h2database:h2') // 인메모리형 관계형 데이터베이스
 }
-
-//dependencies {
-//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-//    compile 'org.springframework.boot::spring-boot-starter-web'
-//    testCompileOnly('org.springframework.boot::spring-boot-starter-test')
-//}
-//
-//test {
-//    useJUnitPlatform()
-//}
