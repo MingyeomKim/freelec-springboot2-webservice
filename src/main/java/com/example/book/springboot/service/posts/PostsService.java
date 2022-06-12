@@ -2,6 +2,7 @@ package com.example.book.springboot.service.posts;
 
 import com.example.book.springboot.domain.posts.Posts;
 import com.example.book.springboot.domain.posts.PostsRepository;
+import com.example.book.springboot.web.dto.PostsListResponseDto;
 import com.example.book.springboot.web.dto.PostsResponseDto;
 import com.example.book.springboot.web.dto.PostsSaveRequestDto;
 import com.example.book.springboot.web.dto.PostsUpdateRequestDto;
@@ -9,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -45,5 +48,9 @@ public class PostsService {
         postsRepository.delete(posts);
     }
 
-
+    public List<PostsListResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
+    }
 }
