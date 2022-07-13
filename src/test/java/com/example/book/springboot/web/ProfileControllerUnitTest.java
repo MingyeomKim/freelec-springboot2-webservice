@@ -1,15 +1,11 @@
 package com.example.book.springboot.web;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
-import org.springframework.context.annotation.Profile;
 import org.springframework.mock.env.MockEnvironment;
-import org.springframework.security.core.parameters.P;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.Assert.*;
 
-public class ProfileControllerTest {
+public class ProfileControllerUnitTest {
     @Test
     public void real_profile이_조회된다(){
         // given
